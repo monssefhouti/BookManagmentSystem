@@ -1,0 +1,50 @@
+﻿@model RoleSViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="alert alert-warning text-center text-danger">BOOKS PAGE</h1>
+
+<p>
+    <a asp-action="CreateRole" class="btn btn-outline-primary">
+        <i class="fas fa-plus-circle"></i>
+        Add New User
+    </a>
+</p>
+<table class="table table-bordered text-center text-white">
+    <thead>
+        <tr>
+            <th class="text-warning">
+                @Html.DisplayNameFor(model => model.RoleName)
+            </th>
+            
+            <th width="250" class="text-warning">
+                <i class="fas fa-wrench"></i>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var item in Model.RoleName)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.)
+                </td>
+                
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">
+                        <i class="fas fa-info"></i>
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">
+                        <i class="fas fa-eraser"></i>
+                    </a>
+                </td>
+            </tr>
+        }*@
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@model RoleSViewModel
+@{
+    ViewData["Title"] = "Update Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateRole">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RoleName" class="control-label text-white"></label>
+                <input asp-for="RoleName" class="form-control" />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-warning">
+                    <i class="fas fa-users"></i>
+                    Update This User
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

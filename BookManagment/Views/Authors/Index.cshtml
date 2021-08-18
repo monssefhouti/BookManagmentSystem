@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BookManagment.Models.Entities.Authors>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="alert alert-warning text-center text-danger">AUTHORS PAGE</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">
+        <i class="fas fa-user-plus"></i>
+        Add New Author
+    </a>
+</p>
+<table class="table table-bordered text-center text-white">
+    <thead>
+        <tr>
+            <th width="50">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th width="100">
+                @Html.DisplayNameFor(model => model.BooksNumber)
+            </th>
+            <th width="300">
+                <i class="fas fa-wrench"></i>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BooksNumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning">
+                    <i class="fas fa-pencil-alt"></i>
+                </a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">
+                    <i class="fas fa-info"></i>
+                </a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">
+                    <i class="fas fa-eraser"></i>
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

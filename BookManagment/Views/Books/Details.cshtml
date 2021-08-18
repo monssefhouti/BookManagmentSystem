@@ -1,0 +1,41 @@
+﻿@model BookManagment.Models.Entities.Books
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt-5">
+    <table class="table table-bordered text-center text-white">
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.BookName)</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th width="50">@Html.DisplayNameFor(model => model.PageNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.ImageUrl)</th>
+            <th> @Html.DisplayNameFor(model => model.ReleaseDate)</th>
+            <th> @Html.DisplayNameFor(model => model.Author.Name)</th>
+            <th>
+                <i class="fas fa-wrench"></i>
+                Actions
+            </th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.BookName)</td>
+            <td> @Html.DisplayFor(model => model.Description)</td>
+            <td>@Html.DisplayFor(model => model.PageNumber)</td>
+            <td> @Html.DisplayFor(model => model.ImageUrl)</td>
+            <td> @Html.DisplayFor(model => model.ReleaseDate)</td>
+            <td> @Html.DisplayFor(model => model.Author.Name)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-danger">
+                    <i class="fas fa-pencil-alt"></i>
+                </a> |
+                <a asp-action="Index" class="btn btn-outline-warning">
+                    <i class="fas fa-book-open"></i>
+                    Cancel
+                </a>
+            </td>
+        </tr>
+    </table>
+    
+</div>
